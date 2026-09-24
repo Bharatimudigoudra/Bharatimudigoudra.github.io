@@ -9,21 +9,29 @@
   <meta property="og:description" content="AI Engineer in Bengaluru building RAG, LLM and computer vision projects. Live demos, GitHub and resume.">
   <meta property="og:type" content="website">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%234f46e5'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-weight='700' font-size='28' fill='white'>BM</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<div class="glow glow-a" aria-hidden="true"></div>
+<div class="glow glow-b" aria-hidden="true"></div>
+
 <header class="nav">
   <div class="wrap nav-inner">
-    <a href="#top" class="logo">Bharati<span>.</span></a>
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu">&#9776;</button>
-    <nav id="menu">
+    <a href="#top" class="logo">BHARATI<span>.</span></a>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Open menu">
+    <label for="menu-toggle" class="menu-btn" aria-hidden="true"><span></span><span></span><span></span></label>
+    <nav class="menu">
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#education">Education</a>
+      <a href="#beyond">Beyond</a>
       <a href="#contact">Contact</a>
-      <a href="Bharati_Mudigoudra_Resume.pdf" target="_blank" rel="noopener" class="btn btn-small">Resume</a>
+      <a href="Bharati_Mudigoudra_Resume.pdf" target="_blank" rel="noopener" class="btn btn-nav">Resume</a>
     </nav>
   </div>
 </header>
@@ -32,29 +40,31 @@
 
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow">AI Engineer &middot; Bengaluru, India</p>
-      <h1>Hi, I'm Bharati Mudigoudra.</h1>
-      <p class="lead">I build AI applications with Python: RAG pipelines, LLM agents and computer vision models, deployed end to end with FastAPI and Docker.</p>
-      <p class="sub">MCA graduate with AI internships at AI4SEE and iNeuron, plus a year of insurance operations experience with US clients. Open to AI Engineer, ML Engineer and GenAI roles. Immediate joiner.</p>
-      <div class="cta">
-        <a href="#projects" class="btn">See my projects</a>
+      <p class="status fade-1"><span class="pulse"></span>Open to AI/ML roles &middot; Immediate joiner</p>
+      <h1 class="fade-2">I build <span class="grad">AI that works</span><br>end to end.</h1>
+      <p class="lead fade-3">Hi, I'm Bharati Mudigoudra - an AI Engineer in Bengaluru. I build AI applications with Python: RAG pipelines, LLM agents and computer vision models, deployed end to end with FastAPI and Docker.</p>
+      <p class="sub fade-4">MCA graduate with AI internships at AI4SEE and iNeuron, plus a year of insurance operations experience with US clients. Open to AI Engineer, ML Engineer and GenAI roles.</p>
+      <div class="cta fade-5">
+        <a href="#projects" class="btn btn-dark">See my projects <span class="arr">&rarr;</span></a>
         <a href="Bharati_Mudigoudra_Resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost">Download resume</a>
       </div>
-      <div class="links">
-        <a href="https://github.com/Bharatimudigoudra" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/bharati-mudigoudra" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:bharativm912001@gmail.com">bharativm912001@gmail.com</a>
+      <div class="hero-links fade-6">
+        <a href="https://github.com/Bharatimudigoudra" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.02 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.78 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12v3.15c0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>GitHub</a>
+        <a href="https://www.linkedin.com/in/bharati-mudigoudra" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>LinkedIn</a>
+        <a href="mailto:bharativm912001@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>bharativm912001@gmail.com</a>
       </div>
     </div>
+    <p class="scroll-hint" aria-hidden="true">SCROLL<span class="chev"></span></p>
   </section>
 
   <section id="projects" class="section">
     <div class="wrap">
-      <h2>Projects</h2>
+      <p class="eyebrow">Selected work</p>
+      <h2>Things I've built.</h2>
 
       <article class="card featured">
         <div class="card-top">
-          <span class="tag tag-live">Live</span>
+          <span class="tag tag-live"><span class="pulse pulse-sm"></span>Live</span>
           <span class="tag">Hackathon</span>
         </div>
         <h3>ZeroQueue - AI Gift-Card Support Copilot</h3>
@@ -68,8 +78,8 @@
         </ul>
         <div class="stack"><span>Python</span><span>FastAPI</span><span>RAG</span><span>Moss</span><span>Tesseract OCR</span><span>Intercom API</span><span>Docker</span><span>Render</span><span>Pytest</span></div>
         <div class="card-links">
-          <a href="https://zeroqueue-hubble.onrender.com/" target="_blank" rel="noopener" class="btn btn-small">Live demo</a>
-          <a href="https://github.com/Bharatimudigoudra/zeroqueue-hubble" target="_blank" rel="noopener" class="btn btn-small btn-ghost">Code</a>
+          <a href="https://zeroqueue-hubble.onrender.com/" target="_blank" rel="noopener" class="btn btn-dark btn-small">Live demo</a>
+          <a href="https://github.com/Bharatimudigoudra/zeroqueue-hubble" target="_blank" rel="noopener" class="btn btn-ghost btn-small">Code</a>
         </div>
         <p class="note">Free hosting: the demo may take up to a minute to wake up on first open.</p>
       </article>
@@ -80,7 +90,7 @@
           <p>A Python agent that crawls company websites with Playwright and extracts structured lead data: company overview, target audience, public contacts and leadership. Orchestrated as a LangGraph state graph with automatic retry on failed extractions, Pydantic-validated output, JSON/CSV export and token usage logging.</p>
           <div class="stack"><span>Python</span><span>LangGraph</span><span>Playwright</span><span>Groq LLM</span><span>Pydantic</span></div>
           <div class="card-links">
-            <a href="https://github.com/Bharatimudigoudra/Autonomous-Lead-Enrichment-Agent" target="_blank" rel="noopener" class="btn btn-small btn-ghost">Code</a>
+            <a href="https://github.com/Bharatimudigoudra/Autonomous-Lead-Enrichment-Agent" target="_blank" rel="noopener" class="btn btn-ghost btn-small">Code</a>
           </div>
         </article>
 
@@ -89,7 +99,7 @@
           <p>A RAG chatbot that grounds LLaMA 3 answers in a medical knowledge base. The book content is chunked, embedded and stored in Pinecone, and a Flask API connects retrieval, LLM inference and the chat app. Deployed on AWS Bedrock, Lambda and API Gateway.</p>
           <div class="stack"><span>Python</span><span>LangChain</span><span>Pinecone</span><span>LLaMA 3</span><span>Flask</span><span>AWS</span></div>
           <div class="card-links">
-            <a href="https://github.com/Bharatimudigoudra/Medical-ChatBot-GenAI" target="_blank" rel="noopener" class="btn btn-small btn-ghost">Code</a>
+            <a href="https://github.com/Bharatimudigoudra/Medical-ChatBot-GenAI" target="_blank" rel="noopener" class="btn btn-ghost btn-small">Code</a>
           </div>
         </article>
 
@@ -104,18 +114,19 @@
           <p>A Python tool that pulls the transcript from YouTube, Instagram and LinkedIn video links for note-making and revision. Uses captions when available, otherwise downloads the audio temporarily and transcribes it with Faster-Whisper.</p>
           <div class="stack"><span>Python</span><span>yt-dlp</span><span>Faster-Whisper</span></div>
           <div class="card-links">
-            <a href="https://github.com/Bharatimudigoudra/VideoContextExtractor" target="_blank" rel="noopener" class="btn btn-small btn-ghost">Code</a>
+            <a href="https://github.com/Bharatimudigoudra/VideoContextExtractor" target="_blank" rel="noopener" class="btn btn-ghost btn-small">Code</a>
           </div>
         </article>
       </div>
 
-      <p class="more">More work, including my 30 Days 30 Projects challenge, is on <a href="https://github.com/Bharatimudigoudra" target="_blank" rel="noopener">GitHub</a>.</p>
+      <p class="more">More of my work is on <a href="https://github.com/Bharatimudigoudra" target="_blank" rel="noopener">GitHub</a>.</p>
     </div>
   </section>
 
   <section id="experience" class="section alt">
     <div class="wrap">
-      <h2>Experience</h2>
+      <p class="eyebrow">Where I've worked</p>
+      <h2>The path so far.</h2>
 
       <div class="timeline">
         <div class="item">
@@ -147,7 +158,8 @@
 
   <section id="skills" class="section">
     <div class="wrap">
-      <h2>Skills</h2>
+      <p class="eyebrow">Toolbox</p>
+      <h2>The tools behind my work.</h2>
       <div class="skills">
         <div class="skill-group">
           <h3>Languages &amp; Backend</h3>
@@ -175,7 +187,8 @@
 
   <section id="education" class="section alt">
     <div class="wrap">
-      <h2>Education &amp; Certifications</h2>
+      <p class="eyebrow">Foundations</p>
+      <h2>Education &amp; certifications.</h2>
       <div class="grid two">
         <div class="card plain">
           <h3>MCA - Master of Computer Applications</h3>
@@ -196,12 +209,29 @@
     </div>
   </section>
 
+  <section id="beyond" class="section compact">
+    <div class="wrap">
+      <p class="eyebrow">Off the clock</p>
+      <h2>Beyond work.</h2>
+      <div class="hobby-row">
+        <span class="hobby"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2.6"/><path d="M9.5 9h5l1.6 8.5H7.9L9.5 9z"/><path d="M6 19h12v2.5H6z"/></svg>Chess</span>
+        <span class="hobby"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="19" r="2.5" fill="currentColor" stroke="none"/><path d="M10 16.5 6 5M12 16.5V4M14 16.5 18 5M7.5 9h9"/></svg>Badminton</span>
+        <span class="hobby"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h14v2a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5v-2z"/><path d="M17 13.5h4"/><path d="M8 8.5c0-1.5 1-1.5 1-3M12 8.5c0-1.5 1-1.5 1-3"/></svg>Cooking</span>
+        <span class="hobby"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13h10l-1.5 8h-7L7 13z"/><path d="M12 13V7"/><path d="M12 9c0-4-3-5-6-5 0 3 2 5 6 5z"/><path d="M12 7c0-3 2-4 5-4 0 3-2 4.5-5 4.5z"/></svg>Indoor Gardening</span>
+        <span class="hobby"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6c-2-1.5-5-2-8-2v14c3 0 6 .5 8 2 2-1.5 5-2 8-2V4c-3 0-6 .5-8 2z"/><path d="M12 6v14"/></svg>Reading</span>
+        <span class="hobby"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5l5 2.5-5 2.5z" fill="currentColor" stroke="none"/></svg>Movies</span>
+        <span class="hobby"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 17.25V21h3.75L17.8 9.94l-3.75-3.75L3 17.25zM20.7 7.04a1 1 0 0 0 0-1.41L18.37 3.3a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.82-1.83z"/></svg>Writer</span>
+      </div>
+    </div>
+  </section>
+
   <section id="contact" class="section contact">
     <div class="wrap">
-      <h2>Let's talk</h2>
-      <p>I'm looking for AI Engineer, ML Engineer and GenAI roles in Bengaluru or remote. I can join immediately.</p>
+      <p class="eyebrow">Say hello</p>
+      <h2>Let's build<br>something.</h2>
+      <p class="contact-sub">I'm looking for AI Engineer, ML Engineer and GenAI roles in Bengaluru or remote. I can join immediately.</p>
       <div class="cta">
-        <a href="mailto:bharativm912001@gmail.com" class="btn">Email me</a>
+        <a href="mailto:bharativm912001@gmail.com" class="btn btn-dark">Email me</a>
         <a href="https://www.linkedin.com/in/bharati-mudigoudra" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
         <a href="https://github.com/Bharatimudigoudra" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
       </div>
@@ -211,9 +241,8 @@
 </main>
 
 <footer>
-  <div class="wrap">&copy; <span id="year"></span> Bharati Mudigoudra</div>
+  <div class="wrap">&copy; 2026 Bharati Mudigoudra &middot; Bengaluru, India</div>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bharati Mudigoudra | AI Engineer</title>
+  <meta name="description" content="Bharati Mudigoudra - AI Engineer in Bengaluru. Python, FastAPI, LangChain, RAG, LLM apps and computer vision. Projects, experience and resume.">
+  <meta property="og:title" content="Bharati Mudigoudra | AI Engineer">
+  <meta property="og:description" content="AI Engineer in Bengaluru building RAG, LLM and computer vision projects. Live demos, GitHub and resume.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%234f46e5'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-weight='700' font-size='28' fill='white'>BM</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo">Bharati<span>.</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">&#9776;</button>
+    <nav id="menu">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <a href="Bharati_Mudigoudra_Resume.pdf" target="_blank" rel="noopener" class="btn btn-small">Resume</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">AI Engineer &middot; Bengaluru, India</p>
+      <h1>Hi, I'm Bharati Mudigoudra.</h1>
+      <p class="lead">I build AI applications with Python: RAG pipelines, LLM agents and computer vision models, deployed end to end with FastAPI and Docker.</p>
+      <p class="sub">MCA graduate with AI internships at AI4SEE and iNeuron, plus a year of insurance operations experience with US clients. Open to AI Engineer, ML Engineer and GenAI roles. Immediate joiner.</p>
+      <div class="cta">
+        <a href="#projects" class="btn">See my projects</a>
+        <a href="Bharati_Mudigoudra_Resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost">Download resume</a>
+      </div>
+      <div class="links">
+        <a href="https://github.com/Bharatimudigoudra" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/bharati-mudigoudra" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:bharativm912001@gmail.com">bharativm912001@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="wrap">
+      <h2>Projects</h2>
+
+      <article class="card featured">
+        <div class="card-top">
+          <span class="tag tag-live">Live</span>
+          <span class="tag">Hackathon</span>
+        </div>
+        <h3>ZeroQueue - AI Gift-Card Support Copilot</h3>
+        <p class="meta">Built for the HiDevs YC Fall 2026 "Moss Zero-Latency Builder Sprint"</p>
+        <p>An AI support copilot for gift-card help desks. Customers ask in plain language or upload a voucher screenshot, and the app answers only from a grounded knowledge base of 100 brands, with citations and a confidence score. When the knowledge base has no real answer, it hands the chat to a human through Intercom instead of guessing.</p>
+        <ul>
+          <li>Python + FastAPI backend with a RAG pipeline over a 100-brand knowledge base indexed in Moss (minilm embeddings, hybrid search)</li>
+          <li>Voucher screenshot upload with Tesseract OCR, and clarifying questions for unclear requests</li>
+          <li>Human handoff through the Intercom REST API, with agent replies shown live in the chat</li>
+          <li>One Docker container, deployed on Render, with a pytest test suite</li>
+        </ul>
+        <div class="stack"><span>Python</span><span>FastAPI</span><span>RAG</span><span>Moss</span><span>Tesseract OCR</span><span>Intercom API</span><span>Docker</span><span>Render</span><span>Pytest</span></div>
+        <div class="card-links">
+          <a href="https://zeroqueue-hubble.onrender.com/" target="_blank" rel="noopener" class="btn btn-small">Live demo</a>
+          <a href="https://github.com/Bharatimudigoudra/zeroqueue-hubble" target="_blank" rel="noopener" class="btn btn-small btn-ghost">Code</a>
+        </div>
+        <p class="note">Free hosting: the demo may take up to a minute to wake up on first open.</p>
+      </article>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Autonomous Lead Enrichment Agent</h3>
+          <p>A Python agent that crawls company websites with Playwright and extracts structured lead data: company overview, target audience, public contacts and leadership. Orchestrated as a LangGraph state graph with automatic retry on failed extractions, Pydantic-validated output, JSON/CSV export and token usage logging.</p>
+          <div class="stack"><span>Python</span><span>LangGraph</span><span>Playwright</span><span>Groq LLM</span><span>Pydantic</span></div>
+          <div class="card-links">
+            <a href="https://github.com/Bharatimudigoudra/Autonomous-Lead-Enrichment-Agent" target="_blank" rel="noopener" class="btn btn-small btn-ghost">Code</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Medical Chatbot using Generative AI</h3>
+          <p>A RAG chatbot that grounds LLaMA 3 answers in a medical knowledge base. The book content is chunked, embedded and stored in Pinecone, and a Flask API connects retrieval, LLM inference and the chat app. Deployed on AWS Bedrock, Lambda and API Gateway.</p>
+          <div class="stack"><span>Python</span><span>LangChain</span><span>Pinecone</span><span>LLaMA 3</span><span>Flask</span><span>AWS</span></div>
+          <div class="card-links">
+            <a href="https://github.com/Bharatimudigoudra/Medical-ChatBot-GenAI" target="_blank" rel="noopener" class="btn btn-small btn-ghost">Code</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Fire &amp; Smoke Detection</h3>
+          <p>Fine-tuned YOLO11 on a custom annotated fire and smoke dataset, reaching 92.2% mAP@0.5 (Fire 92.6%, Smoke 91.8%) and an F1-score of 0.89. Built OpenCV image and video inference with per-frame bounding boxes and confidence scores for continuous monitoring.</p>
+          <div class="stack"><span>YOLO11</span><span>OpenCV</span><span>Python</span><span>Computer Vision</span></div>
+        </article>
+
+        <article class="card">
+          <h3>Video Context Extractor</h3>
+          <p>A Python tool that pulls the transcript from YouTube, Instagram and LinkedIn video links for note-making and revision. Uses captions when available, otherwise downloads the audio temporarily and transcribes it with Faster-Whisper.</p>
+          <div class="stack"><span>Python</span><span>yt-dlp</span><span>Faster-Whisper</span></div>
+          <div class="card-links">
+            <a href="https://github.com/Bharatimudigoudra/VideoContextExtractor" target="_blank" rel="noopener" class="btn btn-small btn-ghost">Code</a>
+          </div>
+        </article>
+      </div>
+
+      <p class="more">More work, including my 30 Days 30 Projects challenge, is on <a href="https://github.com/Bharatimudigoudra" target="_blank" rel="noopener">GitHub</a>.</p>
+    </div>
+  </section>
+
+  <section id="experience" class="section alt">
+    <div class="wrap">
+      <h2>Experience</h2>
+
+      <div class="timeline">
+        <div class="item">
+          <div class="item-head">
+            <h3>Associate, SDU <span>&middot; ResourcePro (US insurance services)</span></h3>
+            <p class="date">Jun 2025 - May 2026 &middot; Bengaluru</p>
+          </div>
+          <p>Insurance operations for US clients at a US-based MNC. Analyzed and validated business data with a focus on accuracy and quality, investigated data discrepancies, followed SOP-driven workflows and prepared reports for stakeholders. This gave me real domain knowledge of insurance workflows, useful for AI in insurance technology.</p>
+        </div>
+
+        <div class="item">
+          <div class="item-head">
+            <h3>Data Analyst Intern <span>&middot; AI4SEE Pvt Ltd</span></h3>
+            <p class="date">Oct 2024 - Jan 2025 &middot; Bengaluru</p>
+          </div>
+          <p>Collected, cleaned and annotated training data in Roboflow for a YOLOv10 object detection model. Built a real-time detection system combining YOLOv10 and DETR, tuning NMS and IoU. Researched garbage classification for waste management and built Graph Neural Network models for traffic prediction.</p>
+        </div>
+
+        <div class="item">
+          <div class="item-head">
+            <h3>Data Science Intern <span>&middot; iNeuron Intelligence Pvt Ltd</span></h3>
+            <p class="date">Jun 2024 - Oct 2024 &middot; Bengaluru</p>
+          </div>
+          <p>Developed an AI-powered data analysis system using LLMs through the Groq API to automate insight generation. Built data pipelines for business intelligence use and benchmarked several LLMs to pick models for the workflow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill-group">
+          <h3>Languages &amp; Backend</h3>
+          <div class="stack"><span>Python</span><span>SQL</span><span>FastAPI</span><span>Flask</span><span>Streamlit</span></div>
+        </div>
+        <div class="skill-group">
+          <h3>GenAI &amp; LLMs</h3>
+          <div class="stack"><span>RAG</span><span>LangChain</span><span>LangGraph</span><span>Prompt Engineering</span><span>AI Agents</span><span>Groq</span></div>
+        </div>
+        <div class="skill-group">
+          <h3>Vector Search &amp; Data</h3>
+          <div class="stack"><span>Pinecone</span><span>Moss</span><span>FAISS</span><span>ChromaDB</span><span>MySQL</span><span>Pandas</span><span>NumPy</span></div>
+        </div>
+        <div class="skill-group">
+          <h3>Computer Vision &amp; ML</h3>
+          <div class="stack"><span>YOLO</span><span>OpenCV</span><span>Tesseract OCR</span><span>Scikit-learn</span><span>PyTorch</span></div>
+        </div>
+        <div class="skill-group">
+          <h3>Deploy &amp; Tools</h3>
+          <div class="stack"><span>Docker</span><span>Render</span><span>AWS</span><span>GitHub Actions</span><span>Pytest</span><span>Git</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="section alt">
+    <div class="wrap">
+      <h2>Education &amp; Certifications</h2>
+      <div class="grid two">
+        <div class="card plain">
+          <h3>MCA - Master of Computer Applications</h3>
+          <p class="meta">Harsha Institutions, Bangalore University &middot; 2023 - 2024</p>
+          <p>CGPA 8.05</p>
+        </div>
+        <div class="card plain">
+          <h3>BCA - Bachelor of Computer Applications</h3>
+          <p class="meta">Kuvempu University &middot; 2019 - 2022</p>
+          <p>First Class, 74.5%</p>
+        </div>
+      </div>
+      <ul class="certs">
+        <li>Fundamentals of Generative AI - Microsoft</li>
+        <li>Artificial Intelligence - IBM</li>
+        <li>Generative AI Mastery &amp; Full Stack Data Science - Euron</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <div class="wrap">
+      <h2>Let's talk</h2>
+      <p>I'm looking for AI Engineer, ML Engineer and GenAI roles in Bengaluru or remote. I can join immediately.</p>
+      <div class="cta">
+        <a href="mailto:bharativm912001@gmail.com" class="btn">Email me</a>
+        <a href="https://www.linkedin.com/in/bharati-mudigoudra" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+        <a href="https://github.com/Bharatimudigoudra" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">&copy; <span id="year"></span> Bharati Mudigoudra</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

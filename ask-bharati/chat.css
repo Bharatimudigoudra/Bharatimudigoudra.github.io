@@ -39,8 +39,15 @@ html[data-ab-window],html[data-ab-window] body{margin:0;height:100%;overflow:hid
 
 .ab-gate{padding:14px 16px;display:flex;flex-direction:column;gap:8px;overflow:auto}
 .ab-gate-t{margin:0;font-weight:600;font-size:15px}
-.ab-gate-n{margin:0;font-size:12.5px;line-height:1.45;color:#5a5f73}
-.ab-gate input{font:inherit;padding:10px 12px;border:1px solid #cfd3e3;border-radius:10px}
-.ab-gate button{font:inherit;font-weight:600;padding:10px 12px;border:0;border-radius:10px;background:#111827;color:#fff;cursor:pointer}
+.ab-gate-t{color:var(--ab-ink)}
+.ab-root .ab-gate .ab-gate-n{margin:0;font-size:13px;line-height:1.45;color:var(--ab-ink);opacity:1}
+.ab-gate input{font:inherit;padding:10px 12px;border:1px solid var(--ab-muted);border-radius:10px;background:var(--ab-bg);color:var(--ab-ink)}
+.ab-gate button{font:inherit;font-weight:600;padding:10px 12px;border:0;border-radius:10px;background:var(--ab-accent);color:#fff;cursor:pointer}
 .ab-gate-e{min-height:16px;font-size:12.5px;color:#b42318}
 .ab-status{display:none;padding:6px 14px;font-size:12px;color:#b42318}
+
+.ab-gate .ab-gate-l{background:none;color:var(--ab-accent);font-weight:600;font-size:13px;padding:6px;text-decoration:underline;align-self:center}
+.ab-test{display:none;padding:6px 12px;font-size:12px;background:#fff7e0;color:#5c4400;border-bottom:1px solid #f0deaa}
+.ab-test button{font:inherit;font-size:12px;border:0;background:none;color:#5c4400;text-decoration:underline;cursor:pointer;padding:0}
+
+@media (prefers-color-scheme:dark){.ab-gate .ab-gate-l{color:#a5b4fc}.ab-gate-e{color:#ff8a80}}

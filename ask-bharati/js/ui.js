@@ -27,7 +27,9 @@
     var foot = el('div', 'ab-foot', 'Automated answers from my portfolio and resume, not live replies.');
     var rz = el('div', 'ab-rz'); rz.setAttribute('aria-hidden', 'true');
     var CFG = AB.history && AB.history.key ? AB.history : null;
-    var PREVIEW = location.protocol === 'file:' && !/[?&]gate=1/.test(location.search);
+    var LOCALPREV = location.protocol === 'file:' && !/[?&]gate=1/.test(location.search);
+    var TESTING = false; try { TESTING = localStorage.getItem('abTesting') === '1'; } catch (e) {}
+    var PREVIEW = LOCALPREV || TESTING;
     var email = ''; try { email = sessionStorage.getItem('abEmail') || ''; } catch (e) {}
     var gate = el('form', 'ab-gate');
     gate.noValidate = true;
@@ -36,16 +38,29 @@
     var gIn = el('input'); gIn.type = 'email'; gIn.placeholder = 'you@example.com'; gIn.maxLength = 120; gIn.autocomplete = 'email'; gIn.setAttribute('aria-label', 'Your email');
     var gErr = el('div', 'ab-gate-e'); gErr.setAttribute('role', 'alert');
     var gBtn = el('button', '', 'Start chat'); gBtn.type = 'submit';
-    gate.appendChild(gIn); gate.appendChild(gErr); gate.appendChild(gBtn);
+    var tLink = el('button', 'ab-gate-l', 'My testing mode'); tLink.type = 'button'; tLink.title = 'For the site owner: skips the email field and sends nothing, in this browser only';
+    gate.appendChild(gIn); gate.appendChild(gErr); gate.appendChild(gBtn); gate.appendChild(tLink);
+    var tBar = el('div', 'ab-test'); tBar.appendChild(document.createTextNode('Testing mode: no email asked, nothing is sent. '));
+    var tExit = el('button', '', 'Exit testing mode'); tExit.type = 'button'; tBar.appendChild(tExit);
     var status = el('div', 'ab-status');
-    [head, gate, log, chips, form, status, foot, rz].forEach(function (n) { panel.appendChild(n); });
+    [head, tBar, gate, log, chips, form, status, foot, rz].forEach(function (n) { panel.appendChild(n); });
     function gated() { return !!CFG && !PREVIEW && !email; }
-    function showGate() { var g = gated(); gate.style.display = g ? '' : 'none'; log.style.display = chips.style.display = form.style.display = g ? 'none' : ''; }
+    function showGate() { tBar.style.display = TESTING ? 'block' : 'none'; var g = gated(); gate.style.display = g ? '' : 'none'; log.style.display = chips.style.display = form.style.display = g ? 'none' : ''; }
     gate.addEventListener('submit', function (e) {
       e.preventDefault(); var v = gIn.value.trim();
       if (!/^[^\s@<>"',;:]+@[^\s@<>"',;:]+\.[A-Za-z]{2,}$/.test(v) || v.length > 120) { gErr.textContent = 'Please enter a valid email ID'; return; }
       gErr.textContent = ''; email = v; try { sessionStorage.setItem('abEmail', v); } catch (x) {}
       showGate(); input.focus();
+    });
+    tLink.addEventListener('click', function () {
+      TESTING = true; PREVIEW = true; try { localStorage.setItem('abTesting', '1'); } catch (x) {}
+      pending = []; if (timer) { clearTimeout(timer); timer = null; }
+      showGate(); input.focus();
+    });
+    tExit.addEventListener('click', function () {
+      TESTING = false; PREVIEW = LOCALPREV; try { localStorage.removeItem('abTesting'); sessionStorage.removeItem('abEmail'); } catch (x) {}
+      email = ''; pending = []; if (timer) { clearTimeout(timer); timer = null; }
+      showGate(); (gated() ? gIn : input).focus();
     });
     // ---------- history to Bharati by email (Web3Forms), only when configured and not local preview ----------
     var pending = [], sentMails = 0, timer = null, MAXMAIL = 6;

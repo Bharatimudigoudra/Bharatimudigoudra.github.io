@@ -232,6 +232,11 @@
     if (!pid && !ctx.project && pron && intents.length && /\b(project|it|this)\b/i.test(q) && !/\b(skill|experience|education|college)\b/i.test(q)) {
       return {text: 'Which project do you mean? I can talk about Ask OLake, ZeroQueue, the Medical Chatbot, Fire & Smoke Detection, the Autonomous Lead Enrichment Agent or the Video Context Extractor.', links: [], src: 'Projects'};
     }
+    // one project asked for ("main", "strongest", "best" project, singular): lead with ZeroQueue, the lead project on my resume
+    if (!pid && !/\bprojects\b/i.test(q) && /\b(main|strongest|strong|best|top|flagship|biggest|signature|proudest|favou?rite|most (impressive|important|significant))\b[^?.!]*\bproject\b|\bproject\b[^?.!]*\b(main|strongest|best|top|flagship|biggest)\b/i.test(q)) {
+      ctx.project = 'zeroqueue';
+      return {text: 'My lead project is ZeroQueue, an AI gift-card support copilot that I co-built with a teammate at the HiDevs YC Fall 2026 "Moss Zero-Latency Builder Sprint". I built the Python and FastAPI backend with a RAG pipeline over a support knowledge base of 100 brands, returning cited answers. It runs as one Docker container on Render, with 64 pytest tests on every push. Ask about any other project by name, or ask for all my projects.', links: lk('zq', 'zqc'), src: 'Projects'};
+    }
     var r = answer(q);
     if (pid) ctx.project = pid;
     else if (r && r.src === 'Projects' && /Ask OLake/.test(JSON.stringify(r.text))) ctx.project = 'olake';

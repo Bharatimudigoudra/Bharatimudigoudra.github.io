@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+*.pyc
+evidence/
+short_answer_backups/
+ask_diag.py
+ask_diag_v2.py
+
+.env
+*.bak

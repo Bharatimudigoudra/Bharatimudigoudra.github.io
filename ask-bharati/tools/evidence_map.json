@@ -1,0 +1,458 @@
+{
+ "owner": "Bharatimudigoudra",
+ "labels": {
+  "zeroqueue-hubble": "ZeroQueue",
+  "Medical-ChatBot-GenAI": "Medical Chatbot",
+  "Autonomous-Lead-Enrichment-Agent": "Autonomous Lead Enrichment Agent",
+  "VideoContextExtractor": "Video Context Extractor",
+  "Book-Recommender-System": "Book Recommendation System",
+  "Source-Code-Analysis": "Source-Code Analysis tool",
+  "AI_Powered_Data_Analysis_System": "AI Powered Data Analysis System",
+  "YOLOv10": "YOLOv10 / DETR notebooks",
+  "genai-hands-on-lab": "GenAI practice lab (notebook, not a project)"
+ },
+ "skills": [
+  {
+   "name": "LangChain",
+   "question_regex": "langchain",
+   "uses": [
+    {
+     "repo": "Medical-ChatBot-GenAI",
+     "file": "app.py",
+     "pattern": "create_retrieval_chain\\("
+    },
+    {
+     "repo": "Source-Code-Analysis",
+     "file": "app.py",
+     "pattern": "ConversationalRetrievalChain\\.from_llm\\("
+    },
+    {
+     "repo": "AI_Powered_Data_Analysis_System",
+     "file": "analyze_dataset.py",
+     "pattern": "ChatGroq\\(|create_pandas|LLMChain|\\|\\s*llm"
+    }
+   ],
+   "note": "",
+   "say": ""
+  },
+  {
+   "name": "LangGraph",
+   "question_regex": "langgraph",
+   "uses": [
+    {
+     "repo": "Autonomous-Lead-Enrichment-Agent",
+     "file": "src/graph.py",
+     "pattern": "StateGraph\\("
+    }
+   ],
+   "note": "",
+   "say": ""
+  },
+  {
+   "name": "FastAPI",
+   "question_regex": "fastapi",
+   "uses": [
+    {
+     "repo": "zeroqueue-hubble",
+     "file": "app/api_agent.py",
+     "pattern": "router = APIRouter\\(\\)"
+    }
+   ],
+   "note": "Ask OLake also uses FastAPI, but its code is in a private repo, so there is no link.",
+   "say": ""
+  },
+  {
+   "name": "Flask",
+   "question_regex": "flask",
+   "uses": [
+    {
+     "repo": "Medical-ChatBot-GenAI",
+     "file": "app.py",
+     "pattern": "=\\s*Flask\\("
+    },
+    {
+     "repo": "Source-Code-Analysis",
+     "file": "app.py",
+     "pattern": "=\\s*Flask\\("
+    },
+    {
+     "repo": "AI_Powered_Data_Analysis_System",
+     "file": "app.py",
+     "pattern": "=\\s*Flask\\("
+    }
+   ],
+   "note": "",
+   "say": ""
+  },
+  {
+   "name": "Pinecone",
+   "question_regex": "pinecone",
+   "uses": [
+    {
+     "repo": "Medical-ChatBot-GenAI",
+     "file": "app.py",
+     "pattern": "PineconeVectorStore\\.\\w+\\("
+    }
+   ],
+   "note": "",
+   "say": ""
+  },
+  {
+   "name": "ChromaDB",
+   "question_regex": "chroma|chromadb",
+   "uses": [
+    {
+     "repo": "Source-Code-Analysis",
+     "file": "app.py",
+     "pattern": "Chroma\\(|Chroma\\."
+    }
+   ],
+   "note": "",
+   "say": ""
+  },
+  {
+   "name": "Groq",
+   "question_regex": "groq",
+   "uses": [
+    {
+     "repo": "Medical-ChatBot-GenAI",
+     "file": "app.py",
+     "pattern": "ChatGroq\\("
+    },
+    {
+     "repo": "Autonomous-Lead-Enrichment-Agent",
+     "file": "src/extractor.py",
+     "pattern": "Groq\\("
+    },
+    {
+     "repo": "Source-Code-Analysis",
+     "file": "app.py",
+     "pattern": "ChatGroq\\("
+    },
+    {
+     "repo": "AI_Powered_Data_Analysis_System",
+     "file": "analyze_dataset.py",
+     "pattern": "ChatGroq\\("
+    }
+   ],
+   "note": "",
+   "say": ""
+  },
+  {
+   "name": "sentence-transformers embeddings",
+   "question_regex": "sentence[- ]transformers|embedding",
+   "uses": [
+    {
+     "repo": "Medical-ChatBot-GenAI",
+     "file": "requirements.txt",
+     "pattern": "^sentence-transformers"
+    },
+    {
+     "repo": "Source-Code-Analysis",
+     "file": "research/trials.ipynb",
+     "pattern": "sentence-transformers"
+    }
+   ],
+   "note": "",
+   "say": ""
+  },
+  {
+   "name": "Playwright",
+   "question_regex": "playwright",
+   "uses": [
+    {
+     "repo": "Autonomous-Lead-Enrichment-Agent",
+     "file": "src/crawler.py",
+     "pattern": "sync_playwright|async_playwright|\\.launch\\("
+    }
+   ],
+   "note": "",
+   "say": ""
+  },
+  {
+   "name": "Pydantic",
+   "question_regex": "pydantic",
+   "uses": [
+    {
+     "repo": "Autonomous-Lead-Enrichment-Agent",
+     "file": "src/models.py",
+     "pattern": "\\(BaseModel\\)"
+    },
+    {
+     "repo": "zeroqueue-hubble",
+     "file": "app/api_agent.py",
+     "pattern": "\\(BaseModel\\)"
+    }
+   ],
+   "note": "",
+   "say": ""
+  },
+  {
+   "name": "pytest",
+   "question_regex": "pytest",
+   "uses": [
+    {
+     "repo": "zeroqueue-hubble",
+     "file": "test/test_api.py",
+     "pattern": "def test_"
+    },
+    {
+     "repo": "Autonomous-Lead-Enrichment-Agent",
+     "file": "tests/conftest.py",
+     "pattern": "^import pytest"
+    }
+   ],
+   "note": "",
+   "say": ""
+  },
+  {
+   "name": "Docker",
+   "question_regex": "docker",
+   "uses": [
+    {
+     "repo": "zeroqueue-hubble",
+     "file": "Dockerfile",
+     "pattern": "^FROM"
+    },
+    {
+     "repo": "Medical-ChatBot-GenAI",
+     "file": "Dockerfile",
+     "pattern": "^FROM"
+    }
+   ],
+   "note": "",
+   "say": ""
+  },
+  {
+   "name": "GitHub Actions",
+   "question_regex": "github actions|ci/cd|ci-cd|cicd",
+   "uses": [
+    {
+     "repo": "zeroqueue-hubble",
+     "file": ".github/workflows/tests.yml",
+     "pattern": "^name:"
+    },
+    {
+     "repo": "Medical-ChatBot-GenAI",
+     "file": ".github/workflows/cicd.yaml",
+     "pattern": "^name:"
+    }
+   ],
+   "note": "",
+   "say": ""
+  },
+  {
+   "name": "Tesseract OCR",
+   "question_regex": "tesseract|\\bocr\\b",
+   "uses": [
+    {
+     "repo": "zeroqueue-hubble",
+     "file": "app/services/attachment_service.py",
+     "pattern": "^_WINDOWS_DEFAULT_TESSERACT ="
+    }
+   ],
+   "note": "",
+   "say": ""
+  },
+  {
+   "name": "Moss",
+   "question_regex": "\\bmoss\\b",
+   "uses": [
+    {
+     "repo": "zeroqueue-hubble",
+     "file": "app/services/moss_service.py",
+     "pattern": "^_MOSS_CLIENT ="
+    }
+   ],
+   "note": "",
+   "say": ""
+  },
+  {
+   "name": "Intercom",
+   "question_regex": "intercom",
+   "uses": [
+    {
+     "repo": "zeroqueue-hubble",
+     "file": "app/adapters/intercom.py",
+     "pattern": "httpx\\.post\\("
+    }
+   ],
+   "note": "",
+   "say": ""
+  },
+  {
+   "name": "SQLite",
+   "question_regex": "sqlite",
+   "uses": [
+    {
+     "repo": "zeroqueue-hubble",
+     "file": "app/services/handoff_store.py",
+     "pattern": "sqlite3\\.connect"
+    }
+   ],
+   "note": "",
+   "say": ""
+  },
+  {
+   "name": "Faster-Whisper",
+   "question_regex": "whisper",
+   "uses": [
+    {
+     "repo": "VideoContextExtractor",
+     "file": "requirements.txt",
+     "pattern": "^faster-whisper"
+    }
+   ],
+   "note": "",
+   "say": ""
+  },
+  {
+   "name": "yt-dlp",
+   "question_regex": "yt-dlp|ytdlp",
+   "uses": [
+    {
+     "repo": "VideoContextExtractor",
+     "file": "requirements.txt",
+     "pattern": "^yt-dlp"
+    }
+   ],
+   "note": "",
+   "say": ""
+  },
+  {
+   "name": "Pandas",
+   "question_regex": "pandas",
+   "uses": [
+    {
+     "repo": "Book-Recommender-System",
+     "file": "notebook/research.ipynb",
+     "pattern": "pd\\.read_csv"
+    },
+    {
+     "repo": "AI_Powered_Data_Analysis_System",
+     "file": "analyze_dataset.py",
+     "pattern": "pd\\.\\w+\\("
+    }
+   ],
+   "note": "",
+   "say": ""
+  },
+  {
+   "name": "NumPy",
+   "question_regex": "numpy",
+   "uses": [
+    {
+     "repo": "Book-Recommender-System",
+     "file": "notebook/research.ipynb",
+     "pattern": "np\\.\\w+\\("
+    }
+   ],
+   "note": "",
+   "say": ""
+  },
+  {
+   "name": "Scikit-learn",
+   "question_regex": "scikit|sklearn",
+   "uses": [
+    {
+     "repo": "Book-Recommender-System",
+     "file": "notebook/research.ipynb",
+     "pattern": "NearestNeighbors\\("
+    }
+   ],
+   "note": "",
+   "say": ""
+  },
+  {
+   "name": "YOLO",
+   "question_regex": "\\byolo",
+   "uses": [
+    {
+     "repo": "YOLOv10",
+     "file": "YOLO_v11.ipynb",
+     "pattern": "YOLO\\("
+    }
+   ],
+   "note": "",
+   "say": "I have used YOLO in my public YOLOv10 / DETR notebooks, where I run a pretrained yolov10x.pt model on images and video. I don't have a public repo for my Fire & Smoke fine-tuning, so I can't link it."
+  },
+  {
+   "name": "OpenCV",
+   "question_regex": "opencv|\\bcv2\\b",
+   "uses": [
+    {
+     "repo": "YOLOv10",
+     "file": "YOLO_v11.ipynb",
+     "pattern": "cv2\\.\\w+\\("
+    }
+   ],
+   "note": "",
+   "say": ""
+  },
+  {
+   "name": "DETR",
+   "question_regex": "\\bdetr\\b",
+   "uses": [
+    {
+     "repo": "YOLOv10",
+     "file": "DeRt.ipynb",
+     "pattern": "DeformableDetrForObjectDetection\\.from_pretrained|DetrForObjectDetection\\.from_pretrained"
+    }
+   ],
+   "note": "It is a notebook that runs the pretrained facebook/detr-resnet model with Transformers and PyTorch.",
+   "say": ""
+  },
+  {
+   "name": "PyTorch",
+   "question_regex": "pytorch|\\btorch\\b",
+   "uses": [
+    {
+     "repo": "YOLOv10",
+     "file": "DeRt.ipynb",
+     "pattern": "torch\\.\\w+"
+    }
+   ],
+   "note": "",
+   "say": ""
+  },
+  {
+   "name": "CrossEncoder reranking",
+   "question_regex": "crossencoder|rerank",
+   "uses": [
+    {
+     "repo": "genai-hands-on-lab",
+     "file": "01_rag_reranking_evaluation.ipynb",
+     "pattern": "CrossEncoder\\("
+    }
+   ],
+   "note": "",
+   "say": "I can't point to a public repo that shows CrossEncoder reranking in a deployed project. I tried it in a practice notebook, linked below."
+  },
+  {
+   "name": "PostgreSQL",
+   "question_regex": "postgres",
+   "uses": [
+    {
+     "repo": "genai-hands-on-lab",
+     "file": "02_postgres_index_explain_experiment.ipynb",
+     "pattern": "psycopg2\\.connect"
+    }
+   ],
+   "note": "",
+   "say": "I haven't used PostgreSQL in a project. I ran an index and EXPLAIN experiment in a practice notebook."
+  },
+  {
+   "name": "AWS",
+   "question_regex": "\\baws\\b|\\bec2\\b",
+   "uses": [
+    {
+     "repo": "Medical-ChatBot-GenAI",
+     "file": ".github/workflows/cicd.yaml",
+     "pattern": "^name:"
+    }
+   ],
+   "note": "",
+   "say": "AWS is listed under cloud and MLOps on my resume. My public Medical Chatbot repo contains a GitHub Actions workflow that builds the Docker image, pushes it to Amazon ECR and runs it on a self-hosted runner. That shows the setup in code, but the repo cannot confirm that it ran live."
+  }
+ ]
+}

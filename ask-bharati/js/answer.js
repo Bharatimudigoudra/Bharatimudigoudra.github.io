@@ -54,6 +54,11 @@
     if (/^\s*(hi|hello|hey|hii|good (morning|afternoon|evening))( there)?\b[\s!.]*$/i.test(q)) {
       return {text: 'Hello! You can ask me about my projects, skills, experience or education.', links: [], src: ''};
     }
+    var JUDGE = /\b(negatives?|weakness(es)?|weak points?|flaws?|faults?|shortcomings?|drawbacks?|bad (things?|habits?|points?|side|qualit(y|ies))|downsides?|gaps?|cons|arrogant|lazy|rude|ugly|good[- ]looking|beautiful|pretty|attractive|handsome|boyfriend|girlfriend|dating|religion|caste|politics|drink|smoke|gossip|rumou?rs?|regrets?|insta(gram)?|facebook|snapchat|twitter|five years|10 years|ten years)\b|\bnot (hire|select|choose)\b|\b(what|anything|something|one|any) (is|are)? ?(wrong|bad|negative) (with|about)\b/i;
+    var PROJ_NAMED = /\b(youtube|zeroqueue|zero queue|olake|ask olake|medical|fire|smoke|video|lead enrichment|book recommend|source[- ]code|project|projects|app|tool|code|repo|resume|cv)\b/i;
+    if (JUDGE.test(q) && !PROJ_NAMED.test(q)) {
+      return {text: 'I don\'t have reliable information about that in my portfolio or resume, so I won\'t guess. Please contact me by email or LinkedIn.', links: lk('email', 'linkedin'), src: ''};
+    }
     var PRIV_DETAIL = /\b(name|names|medical|health|illness|sick|disease|operation|surgery|medicine|medicines|medication|hospital|how much|amount|lakhs?|lpa|interest|emi|salary|age|old|dob|birth ?date|date of birth|married|marital|husband|children|kids|address|phone|mobile|number|religion|caste|exact|village|street|income|jobs?)\b|\b(sister|sisters|siblings?)\b.*\b(who|which|what|where|do|does|did)\b.*\b(do|does|work|study|married|live|name)\b/i;
     var FAMILY_Q = /\b(family|background|parents?|mother|mom|father|dad|sisters?|siblings?|grew up|grow up|brought up|single[- ]parent|struggles?|hardships?|journey|life story|your story|education loan|student loan|loan|passed away|died|death)\b/i;
     var FAM_WORD = /\b(family|parents?|mother|mom|mum|father|dad|sisters?|siblings?|brothers?|children|kids|husband|wife|loan|operation|surgery|medical condition)\b/i;

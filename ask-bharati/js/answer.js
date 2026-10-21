@@ -111,7 +111,7 @@
         }
       }
     }
-    if (/\bwhy (should|would|do) (we|i) hire\b|\bwhat makes you\b|\bstrengths?\b/i.test(q)) {
+    if ((/\bwhy (should|would|do) (we|i) hire\b|\bwhat makes you\b|\bstrengths?\b/i.test(q) || (/\bpositives?\b|\bgood (things?|points?|qualit(y|ies)|sides?|traits?)\b|\bbest (things?|qualit(y|ies)|points?|sides?|traits?)\b/i.test(q) && !/zeroqueue|olake|medical|fire|smoke|video|project|app|tool|code|repo|skill/i.test(q)))) {
       return {text: 'I am an AI Engineer who builds LLM, RAG and agent applications in Python and FastAPI. My projects include ZeroQueue and Ask OLake, and the code for several of them is public on my GitHub. Please look at my projects, or email me.', links: lk('github', 'email'), src: ''};
     }
     if (/\bwhy (did you |do you |have you )?(choose|chose|pick|picked|like|interested in|go into|get into|want)\b.*\b(ai|artificial intelligence|machine learning|this field)\b|\bwhat (motivates|drives|inspires) you\b|\bwhy (ai|ai engineering)\??$/i.test(q)) {

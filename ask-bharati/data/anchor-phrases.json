@@ -1,162 +1,178 @@
 {
- "intro": [
-  "Bharati Mudigoudra professional summary",
-  "Who is Bharati Mudigoudra",
-  "About the candidate",
-  "AI engineer profile overview",
-  "Tell me about this candidate's background",
-  "Introduction of the portfolio owner",
-  "short profile of Bharati",
-  "candidate profile summary",
-  "quick profile of the candidate"
- ],
- "roles": [
-  "Is Bharati open to work",
-  "What roles is she looking for",
-  "Is she available to join immediately",
-  "Hiring availability for AI engineer roles",
-  "Is the candidate open to remote jobs",
-  "What kind of job is Bharati looking for",
-  "would she consider a new opportunity",
-  "open to new opportunities"
- ],
- "location": [
-  "Where is Bharati based",
-  "Which city does she live in",
-  "Candidate location Bengaluru",
-  "Where is she located",
-  "Current city of the candidate"
- ],
- "contact": [
-  "How can I contact Bharati",
-  "What is her email address",
-  "How to reach the candidate",
-  "Best way to get in touch",
-  "Contact details for hiring"
- ],
- "links": [
-  "Links to her profiles",
-  "Where is her GitHub",
-  "LinkedIn profile link",
-  "Download her resume",
-  "Portfolio and resume links",
-  "Where can I find her CV"
- ],
- "projects": [
-  "What projects has Bharati built",
-  "List of her projects",
-  "Portfolio projects overview",
-  "What has she worked on",
-  "Show me all her work",
-  "Which apps has she developed"
- ],
- "olake": [
-  "Tell me about Ask OLake",
-  "What is the Ask OLake project",
-  "OLake documentation assistant details",
-  "Hackathon project about OLake",
-  "How does Ask OLake answer documentation questions"
- ],
- "zeroqueue": [
-  "Tell me about ZeroQueue",
-  "What is the ZeroQueue project",
-  "AI gift card support copilot details",
-  "Her role in the ZeroQueue hackathon project",
-  "How does the ZeroQueue RAG pipeline work"
- ],
- "medical": [
-  "Tell me about the Medical Chatbot",
-  "What is the medical chatbot project",
-  "RAG medical chatbot details",
-  "Healthcare chatbot using generative AI"
- ],
- "fire": [
-  "Tell me about the fire and smoke detection project",
-  "YOLO fire detection details",
-  "Computer vision fire detection project",
-  "What accuracy did the smoke detection model reach"
- ],
- "lead": [
-  "Tell me about the Autonomous Lead Enrichment Agent",
-  "Lead enrichment agent project details",
-  "LangGraph lead crawling agent",
-  "Other projects on her GitHub like book recommendation"
- ],
- "vce": [
-  "Tell me about the Video Context Extractor",
-  "Video transcript extraction tool",
-  "YouTube transcript project details",
-  "How does the video context extractor work"
- ],
- "experience": [
-  "What is her work experience",
-  "Employment history of the candidate",
-  "Where has Bharati worked",
-  "List her internships and jobs",
-  "Total professional experience",
-  "How many years of experience does she have"
- ],
- "resourcepro": [
-  "What did she do at ResourcePro",
-  "Her role at ResourcePro",
-  "Insurance operations work experience",
-  "ResourcePro associate responsibilities",
-  "US insurance client support experience",
-  "SDU associate role",
-  "associate role responsibilities at ResourcePro",
-  "what kind of work in insurance operations"
- ],
- "ai4see": [
-  "What did she do at AI4SEE",
-  "Her data analyst internship at AI4SEE",
-  "YOLOv10 object detection internship work",
-  "AI4SEE internship responsibilities",
-  "Research paper on garbage classification"
- ],
- "ineuron": [
-  "What did she do at iNeuron",
-  "Her data scientist internship at iNeuron",
-  "LLM data analysis system internship",
-  "iNeuron internship responsibilities"
- ],
- "skills": [
-  "What are her technical skills",
-  "Which technologies does Bharati know",
-  "Her tech stack",
-  "Programming languages and tools she uses",
-  "Does she know machine learning",
-  "What AI frameworks can she work with",
-  "databases and vector stores she has used",
-  "which databases does she know",
-  "Pinecone Weaviate MySQL PostgreSQL MongoDB"
- ],
- "education": [
-  "What is her highest qualification",
-  "Where did she do her masters",
-  "MCA degree details",
-  "Her education background",
-  "Which university did she graduate from",
-  "What did she study in college"
- ],
- "education_bca": [
-  "Where did she do her bachelors",
-  "BCA degree details",
-  "Her undergraduate college",
-  "Sahyadri Science College BCA",
-  "Bachelor of Computer Applications"
- ],
- "certs": [
-  "What certifications does she have",
-  "Her certificates and courses",
-  "Microsoft and IBM certifications",
-  "Has she done any certification courses"
- ],
- "beyond": [
-  "What are her hobbies",
-  "What does she do outside work",
-  "Her interests and free time activities",
-  "Does she play chess or badminton",
-  "interests outside of engineering",
-  "personal interests and hobbies"
- ]
+  "intro": [
+    "Bharati Mudigoudra professional summary",
+    "Who is Bharati Mudigoudra",
+    "About the candidate",
+    "AI engineer profile overview",
+    "Tell me about this candidate's background",
+    "Introduction of the portfolio owner",
+    "short profile of Bharati",
+    "candidate profile summary",
+    "quick profile of the candidate"
+  ],
+  "roles": [
+    "Is Bharati open to work",
+    "What roles is she looking for",
+    "Is she available to join immediately",
+    "Hiring availability for AI engineer roles",
+    "Is the candidate open to remote jobs",
+    "What kind of job is Bharati looking for",
+    "would she consider a new opportunity",
+    "open to new opportunities"
+  ],
+  "location": [
+    "Where is Bharati based",
+    "Which city does she live in",
+    "Candidate location Bengaluru",
+    "Where is she located",
+    "Current city of the candidate"
+  ],
+  "contact": [
+    "How can I contact Bharati",
+    "What is her email address",
+    "How to reach the candidate",
+    "Best way to get in touch",
+    "Contact details for hiring"
+  ],
+  "links": [
+    "Links to her profiles",
+    "Where is her GitHub",
+    "LinkedIn profile link",
+    "Download her resume",
+    "Portfolio and resume links",
+    "Where can I find her CV"
+  ],
+  "projects": [
+    "What projects has Bharati built",
+    "List of her projects",
+    "Portfolio projects overview",
+    "What has she worked on",
+    "Show me all her work",
+    "Which apps has she developed"
+  ],
+  "olake": [
+    "Tell me about Ask OLake",
+    "What is the Ask OLake project",
+    "OLake documentation assistant details",
+    "Hackathon project about OLake",
+    "How does Ask OLake answer documentation questions"
+  ],
+  "zeroqueue": [
+    "Tell me about ZeroQueue",
+    "What is the ZeroQueue project",
+    "AI gift card support copilot details",
+    "Her role in the ZeroQueue hackathon project",
+    "How does the ZeroQueue RAG pipeline work"
+  ],
+  "medical": [
+    "Tell me about the Medical Chatbot",
+    "What is the medical chatbot project",
+    "RAG medical chatbot details",
+    "Healthcare chatbot using generative AI"
+  ],
+  "fire": [
+    "Tell me about the fire and smoke detection project",
+    "YOLO fire detection details",
+    "Computer vision fire detection project",
+    "What accuracy did the smoke detection model reach"
+  ],
+  "lead": [
+    "Tell me about the Autonomous Lead Enrichment Agent",
+    "Lead enrichment agent project details",
+    "LangGraph lead crawling agent",
+    "Other projects on her GitHub like book recommendation"
+  ],
+  "vce": [
+    "Tell me about the Video Context Extractor",
+    "Video transcript extraction tool",
+    "YouTube transcript project details",
+    "How does the video context extractor work"
+  ],
+  "experience": [
+    "What is her work experience",
+    "Employment history of the candidate",
+    "Where has Bharati worked",
+    "List her internships and jobs",
+    "Total professional experience",
+    "How many years of experience does she have"
+  ],
+  "resourcepro": [
+    "What did she do at ResourcePro",
+    "Her role at ResourcePro",
+    "Insurance operations work experience",
+    "ResourcePro associate responsibilities",
+    "US insurance client support experience",
+    "SDU associate role",
+    "associate role responsibilities at ResourcePro",
+    "what kind of work in insurance operations"
+  ],
+  "ai4see": [
+    "What did she do at AI4SEE",
+    "Her data analyst internship at AI4SEE",
+    "YOLOv10 object detection internship work",
+    "AI4SEE internship responsibilities",
+    "Research paper on garbage classification"
+  ],
+  "ineuron": [
+    "What did she do at iNeuron",
+    "Her data scientist internship at iNeuron",
+    "LLM data analysis system internship",
+    "iNeuron internship responsibilities"
+  ],
+  "skills": [
+    "What are her technical skills",
+    "Which technologies does Bharati know",
+    "Her tech stack",
+    "Programming languages and tools she uses",
+    "Does she know machine learning",
+    "What AI frameworks can she work with",
+    "databases and vector stores she has used",
+    "which databases does she know",
+    "Pinecone Weaviate MySQL PostgreSQL MongoDB"
+  ],
+  "education": [
+    "What is her highest qualification",
+    "Where did she do her masters",
+    "MCA degree details",
+    "Her education background",
+    "Which university did she graduate from",
+    "What did she study in college"
+  ],
+  "education_bca": [
+    "Where did she do her bachelors",
+    "BCA degree details",
+    "Her undergraduate college",
+    "Sahyadri Science College BCA",
+    "Bachelor of Computer Applications"
+  ],
+  "certs": [
+    "What certifications does she have",
+    "Her certificates and courses",
+    "Microsoft and IBM certifications",
+    "Has she done any certification courses"
+  ],
+  "beyond": [
+    "What are her hobbies",
+    "What does she do outside work",
+    "Her interests and free time activities",
+    "Does she play chess or badminton",
+    "interests outside of engineering",
+    "personal interests and hobbies"
+  ],
+  "latest": [
+    "her latest project",
+    "what is your latest project",
+    "her newest project",
+    "the most recent project",
+    "which project is the latest",
+    "what did she build most recently",
+    "what has she built lately"
+  ],
+  "recent_projects": [
+    "recent projects",
+    "her recent projects",
+    "her latest projects",
+    "what has she been building recently",
+    "her new projects"
+  ]
 }

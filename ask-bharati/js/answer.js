@@ -229,6 +229,11 @@
     if (!pid && !ctx.project && pron && intents.length && /\b(project|it|this)\b/i.test(q) && !/\b(skill|experience|education|college)\b/i.test(q)) {
       return {text: 'Which project do you mean? I can talk about Ask OLake, ZeroQueue, the Medical Chatbot, Fire & Smoke Detection, the Autonomous Lead Enrichment Agent or the Video Context Extractor.', links: [], src: 'Projects'};
     }
+    // recency questions about projects: name the latest one(s) instead of listing everything
+    if (!pid && /\b(latest|newest|most recent|recently|recent|lately)\b/i.test(q)) {
+      if (/\bprojects\b/i.test(q)) { var rf = factById('recent_projects'); return {text: rf.text, links: rf.links, src: rf.sec}; }
+      if (/\bproject\b/i.test(q)) { ctx.project = 'olake'; var lf = factById('latest'); return {text: lf.text, links: lf.links, src: lf.sec}; }
+    }
     // one project asked for ("main", "strongest", "best" project, singular): lead with ZeroQueue, the lead project on my resume
     if (!pid && !/\bprojects\b/i.test(q) && /\b(main|strongest|strong|best|top|flagship|biggest|signature|proudest|favou?rite|most (impressive|important|significant))\b[^?.!]*\bproject\b|\bproject\b[^?.!]*\b(main|strongest|best|top|flagship|biggest)\b/i.test(q)) {
       ctx.project = 'zeroqueue';

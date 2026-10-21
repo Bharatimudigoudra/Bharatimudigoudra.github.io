@@ -44,6 +44,16 @@ facts:
     kw: "projects project built build work portfolio demo apps applications"
     text: "My main projects: Ask OLake (documentation Q&A assistant), ZeroQueue (AI gift-card support copilot), Medical Chatbot using Generative AI, and Fire & Smoke Detection. More on my GitHub: Autonomous Lead Enrichment Agent, Book Recommendation System, a Source-Code Analysis tool using GenAI, and Video Context Extractor. Ask about any of them by name."
     links: [olake, zq, github]
+  - id: latest
+    sec: "Projects"
+    kw: "latest newest most recent project"
+    text: "My latest project is Ask OLake, a Python and FastAPI assistant over the OLake data-ingestion documentation, built in October 2026 at the Hacktoberfest Hack Day Bengaluru x OLake hackathon. It answers setup, sync and Iceberg table-maintenance questions with relevance and evidence checks and source links, and it is deployed on Vercel. Ask about it by name, or ask for all my projects."
+    links: [olake]
+  - id: recent_projects
+    sec: "Projects"
+    kw: "recent latest newest projects"
+    text: "My most recent projects are Ask OLake, built in October 2026 at the Hacktoberfest Hack Day Bengaluru x OLake hackathon, and ZeroQueue, co-built with a teammate at the HiDevs YC Fall 2026 \"Moss Zero-Latency Builder Sprint\". Ask about either by name, or ask for all my projects."
+    links: [olake, zq]
   - id: olake
     sec: "Projects"
     kw: "ask olake olack olake docs documentation assistant hackathon hacktoberfest iceberg fusion ingestion tf-idf tfidf retrieval vercel widget fastapi post ask api"

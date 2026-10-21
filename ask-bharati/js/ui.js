@@ -104,7 +104,22 @@
       var u = log.querySelectorAll('.ab-user'); var last = u[u.length - 1];
       log.scrollTop = last ? Math.max(0, last.offsetTop - log.offsetTop - 8) : 0;
     }
-    function ask(q) { q = q.trim(); if (!q || gated()) return; addUser(q); var a = AB.answer(q); addBot(a); queue(q, a); }
+    function ask(q) {
+      q = q.trim(); if (!q || gated()) return; addUser(q);
+      if (AB.answerAsync) {
+        var noteNode = null, done = false;
+        var tm = setTimeout(function () {
+          if (!done) { addBot({text: 'Getting the chat ready, one moment...', links: [], src: ''}, true); noteNode = log.lastChild; }
+        }, 4000);
+        AB.answerAsync(q).then(function (a) {
+          done = true; clearTimeout(tm);
+          if (noteNode && noteNode.parentNode) noteNode.parentNode.removeChild(noteNode);
+          addBot(a); queue(q, a);
+        });
+        return;
+      }
+      var a = AB.answer(q); addBot(a); queue(q, a);
+    }
     [['Projects', 'What projects have you built?'], ['Skills', 'What are your skills?'], ['Experience', 'Tell me about your experience'], ['Education', 'What is your education?'], ['Links', 'LinkedIn and GitHub links']].forEach(function (c) {
       var b = el('button', 'ab-chip', c[0]); b.type = 'button'; b.addEventListener('click', function () { ask(c[1]); }); chips.appendChild(b);
     });
@@ -128,7 +143,7 @@
       return b;
     }
     function apply() { clamp(box); panel.style.left = box.left + 'px'; panel.style.top = box.top + 'px'; panel.style.width = box.width + 'px'; panel.style.height = box.height + 'px'; }
-    function open() { if (!box) box = defaults(); apply(); panel.classList.add('open'); bubble.style.display = 'none'; (gated() ? gIn : input).focus(); }
+    function open() { if (!box) box = defaults(); apply(); panel.classList.add('open'); bubble.style.display = 'none'; if (AB.semantic) AB.semantic.warm(); (gated() ? gIn : input).focus(); }
     function shut() { if (pipWin) { pipWin.close(); return; } panel.classList.remove('open'); bubble.style.display = ''; bubble.focus(); }
     bubble.addEventListener('click', open); close.addEventListener('click', shut);
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && panel.classList.contains('open')) shut(); });

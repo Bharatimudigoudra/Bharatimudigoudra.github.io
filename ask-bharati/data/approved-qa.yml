@@ -1,0 +1,121 @@
+# Approved answers for the Ask Bharati chat. This YAML is the human-editable source.
+# The chat never invents text: every answer below is shown verbatim.
+# After editing, regenerate the runtime files (facts.js + anchors.json) - see tools/README.md.
+email: bharativm912001@gmail.com
+links:
+  linkedin: ["LinkedIn", "https://www.linkedin.com/in/bharati-mudigoudra-64b05b272"]
+  github: ["GitHub", "https://github.com/Bharatimudigoudra"]
+  email: ["Email me", "mailto:bharativm912001@gmail.com"]
+  resume: ["Resume (PDF)", "assets/resume/Bharati_Mudigoudra_Resume.pdf"]
+  olake: ["Ask OLake live demo", "https://ask-olack.vercel.app/"]
+  zq: ["ZeroQueue live demo", "https://zeroqueue-hubble.onrender.com/"]
+  zqc: ["ZeroQueue code", "https://github.com/Bharatimudigoudra/zeroqueue-hubble"]
+  lead: ["Lead Enrichment Agent code", "https://github.com/Bharatimudigoudra/Autonomous-Lead-Enrichment-Agent"]
+  med: ["Medical Chatbot code", "https://github.com/Bharatimudigoudra/Medical-ChatBot-GenAI"]
+  vce: ["Video Context Extractor code", "https://github.com/Bharatimudigoudra/VideoContextExtractor"]
+facts:
+  - id: intro
+    sec: "Intro"
+    kw: "who bharati about introduce summary background overview tell me yourself"
+    text: "I'm Bharati Mudigoudra, an AI Engineer in Bengaluru. I build applications powered by LLMs, RAG pipelines, agentic workflows and computer vision systems, through internships and independent projects. I work mainly in Python and FastAPI, and I also have professional experience supporting US insurance clients."
+    links: [github, linkedin]
+  - id: roles
+    sec: "Contact"
+    kw: "looking roles hiring open job position location remote available availability join joining immediately immediate joiner bengaluru bangalore"
+    text: "I'm looking for AI Engineer, ML Engineer and GenAI roles in Bengaluru or remote, and I can join immediately."
+    links: [email, resume]
+  - id: location
+    sec: "Contact"
+    kw: "where live lives based location city located stay"
+    text: "I'm based in Bengaluru, India. For anything more specific, please email me."
+    links: [email]
+  - id: contact
+    sec: "Contact"
+    kw: "contact reach email mail hire message talk connect"
+    text: "The best way to reach me is by email at {EMAIL}, or through LinkedIn."
+    links: [email, linkedin]
+  - id: links
+    sec: "Links"
+    kw: "link links profile profiles website url github linkedin resume cv download portfolio"
+    text: "My public profiles and resume are linked below."
+    links: [linkedin, github, resume, email]
+  - id: projects
+    sec: "Projects"
+    kw: "projects project built build work portfolio demo apps applications"
+    text: "My main projects: Ask OLake (documentation Q&A assistant), ZeroQueue (AI gift-card support copilot), Medical Chatbot using Generative AI, and Fire & Smoke Detection. More on my GitHub: Autonomous Lead Enrichment Agent, Book Recommendation System, a Source-Code Analysis tool using GenAI, and Video Context Extractor. Ask about any of them by name."
+    links: [olake, zq, github]
+  - id: olake
+    sec: "Projects"
+    kw: "ask olake olack olake docs documentation assistant hackathon hacktoberfest iceberg fusion ingestion tf-idf tfidf retrieval vercel widget fastapi post ask api"
+    text: "Ask OLake is a Python and FastAPI assistant over the OLake data-ingestion documentation, built at the Hacktoberfest Hack Day Bengaluru x OLake hackathon. It answers setup, sync and Iceberg table-maintenance questions from a downloaded snapshot of 121 documentation pages (698 passages) using TF-IDF retrieval, with relevance and evidence checks to reduce unsupported answers, and shows source links. By default it quotes the documentation text; an optional LLM mode checks quoted text against the retrieved passages. It has a public POST /ask API and a compact, draggable chat widget, deployed on Vercel. The answer checks are imperfect, so the sources are worth opening. It only covers OLake documentation."
+    links: [olake]
+  - id: zeroqueue
+    sec: "Projects"
+    kw: "zeroqueue zero queue gift card support copilot hackathon moss rag ocr intercom docker render pytest voucher handoff teammate"
+    text: "ZeroQueue is an AI gift-card support copilot that I co-built with a teammate at the HiDevs YC Fall 2026 \"Moss Zero-Latency Builder Sprint\". I contributed the Python and FastAPI backend with a RAG pipeline over a support knowledge base of 100 brands indexed in Moss, returning cited answers with a live confidence score and retrieval-latency tracking. It supports voucher screenshot upload with Tesseract OCR and clarifying questions for incomplete requests, and hands over to a human through the Intercom REST API. It is one Docker container on Render, with 64 pytest tests run on every push via GitHub Actions. The demo is on free hosting and may take up to a minute to wake up."
+    links: [zq, zqc]
+  - id: medical
+    sec: "Projects"
+    kw: "medical chatbot generative genai rag pinecone flask groq langchain sentence-transformers docker health"
+    text: "The Medical Chatbot is a RAG-based chatbot that grounds LLM responses in a retrieved medical knowledge base. It uses LangChain and Pinecone vector search with sentence-transformers embeddings, Flask REST APIs connecting retrieval, Groq-hosted LLM inference and the chat app, and is containerized with Docker."
+    links: [med]
+  - id: fire
+    sec: "Projects"
+    kw: "fire smoke detection yolo yolo11 opencv computer vision map f1 vision object"
+    text: "Fire & Smoke Detection fine-tunes YOLO11 on a custom-annotated fire and smoke dataset, reaching 92.2% mAP@0.5 (Fire 92.6%, Smoke 91.8%) and an F1-score of 0.89 at a 0.441 confidence threshold. It has OpenCV image and video inference with per-frame bounding boxes and confidence scores."
+    links: [github]
+  - id: lead
+    sec: "Projects"
+    kw: "lead enrichment agent autonomous langgraph playwright groq pydantic crawl company websites scraping book recommendation source-code analysis github additional"
+    text: "The Autonomous Lead Enrichment Agent is a Python agent that crawls company websites with Playwright and extracts structured lead data: company overview, target audience, public contacts and leadership. It is a LangGraph state graph with automatic retry on failed extractions, Pydantic-validated output, JSON/CSV export and token usage logging. My GitHub also has a Book Recommendation System and a Source-Code Analysis tool using GenAI."
+    links: [lead, github]
+  - id: vce
+    sec: "Projects"
+    kw: "video context extractor transcript youtube instagram linkedin whisper yt-dlp faster-whisper captions"
+    text: "Video Context Extractor is a Python tool that pulls the transcript from YouTube, Instagram and LinkedIn video links for note-making and revision. It uses captions when available, otherwise it downloads the audio temporarily and transcribes it with Faster-Whisper."
+    links: [vce]
+  - id: experience
+    sec: "Experience"
+    kw: "experience work worked job career history employment companies intern internship internships professional years"
+    text: "My experience: Associate, SDU at ResourcePro, 06/2025 to 05/2026, Bengaluru. Data Analyst Intern at AI4SEE Pvt Ltd, 10/2024 to 01/2025. Data Scientist Intern at iNeuron Intelligence, 07/2024 to 10/2024. Ask about any of them for detail."
+    links: [linkedin, resume]
+  - id: resourcepro
+    sec: "Experience"
+    kw: "resourcepro insurance operations sdu associate us clients sop reports data validation"
+    text: "At ResourcePro (06/2025 to 05/2026) I worked in insurance operations for US clients. I analyzed and validated business data with high accuracy and quality, followed SOPs and established workflows, investigated data discrepancies, prepared reports for stakeholders and contributed to process improvements."
+    links: []
+  - id: ai4see
+    sec: "Experience"
+    kw: "ai4see yolov10 detr roboflow annotation garbage classification graph neural network gnn traffic data analyst project lead research paper"
+    text: "At AI4SEE (10/2024 to 01/2025, Data Analyst Intern) I collected, augmented, cleaned and annotated image datasets in Roboflow to train YOLOv10 models, and built a real-time object-detection system integrating YOLOv10 and DETR with NMS and IoU tuning. I contributed to a research paper on garbage classification, worked as the project lead for that research (taking status updates and reviewing teammates' progress), and worked on Graph Neural Networks for traffic prediction."
+    links: []
+  - id: ineuron
+    sec: "Experience"
+    kw: "ineuron data scientist science intern groq llm benchmark pipelines insights business intelligence"
+    text: "At iNeuron Intelligence (07/2024 to 10/2024, Data Scientist Intern) I developed an LLM-powered data analysis system using the Groq API to automate insight generation, designed data pipelines for business intelligence applications, and explored and compared the performance of various LLMs for the data analysis tasks."
+    links: []
+  - id: skills
+    sec: "Skills"
+    kw: "skills skill tech stack technologies tools languages know"
+    text: "Skills from my resume. GenAI and LLM engineering: LLMs, RAG, prompt engineering, AI agents, agentic workflows, embeddings, vector search, reranking (CrossEncoder), NL2SQL, ReAct, MCP, and basic knowledge of LoRA and VLMs.\n AI frameworks and backend: Python, FastAPI, Flask, Django, LangChain, LangGraph, LlamaIndex, PyTorch, Scikit-learn.\n Machine learning and data: feature engineering, model selection, classification, regression, clustering, ensemble learning, model evaluation, Pandas, NumPy.\n Computer vision and NLP: object detection, image classification, segmentation, YOLO, Transformers, LSTM, RNN.\n Data and vector infrastructure: SQL, MySQL, PostgreSQL, MongoDB, Pinecone, Weaviate, ChromaDB, FAISS.\n Cloud and MLOps: AWS, Docker, Git, GitHub Actions, CI/CD, pytest.\n Evaluation and monitoring: LangSmith, Ragas, DeepEval."
+    links: [resume, github]
+  - id: education
+    sec: "Education"
+    kw: "education degree studied study college university mca bca graduate qualification cgpa marks grade percentage harsha kuvempu sahyadri nelamangala rural"
+    text: "My highest qualification is an MCA from Harsha Institute of Management Studies, affiliated by Bangalore University batch 2022 to 2024, Nelamangala, Bangalore Rural. First Class Exemplary with CGPA 8.22"
+    links: []
+  - id: education_bca
+    sec: "Education"
+    kw: "bca bachelor undergraduate sahyadri kuvempu shivamogga"
+    text: "My BCA was at Sahyadri Science College, Kuvempu University, 2019 to 2022, Shivamogga. First Class, 74.5%."
+    links: []
+  - id: certs
+    sec: "Education"
+    kw: "certifications certificates certification courses microsoft ibm euron crack-ed soft skills"
+    text: "Certifications: Fundamentals of Generative AI (Microsoft), Artificial Intelligence (IBM), Generative AI Mastery & Full Stack Data Science (Euron), and Soft Skills & Personality Development (CRACK-ED)."
+    links: []
+  - id: beyond
+    sec: "Beyond work"
+    kw: "hobbies hobby interests outside work free time chess badminton cooking gardening reading movies writer music singing listening personal fun"
+    text: "Outside work I enjoy chess, badminton, cooking, indoor gardening, reading, movies, writing, listening to music and singing."
+    links: []

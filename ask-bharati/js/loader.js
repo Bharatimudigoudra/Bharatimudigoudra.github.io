@@ -4,7 +4,7 @@
   var me = document.currentScript;
   var AB = (window.AskBharati = window.AskBharati || {});
   AB.root = me.src.replace(/js\/loader\.js([?#].*)?$/, '');
-  ['data/facts.js', 'data/github-evidence.js', 'data/config.js', 'js/answer.js', 'js/ui.js'].forEach(function (p) {
+  ['data/facts.js', 'data/github-evidence.js', 'data/config.js', 'js/answer.js', 'js/semantic-router.js', 'js/ui.js'].forEach(function (p) {
     var s = document.createElement('script');
     s.src = AB.root + p; s.async = false;
     document.head.appendChild(s);

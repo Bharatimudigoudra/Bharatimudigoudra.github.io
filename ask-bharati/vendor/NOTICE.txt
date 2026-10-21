@@ -1,0 +1,9 @@
+Third-party components bundled under ask-bharati/vendor and ask-bharati/models:
+
+1. Transformers.js (https://github.com/huggingface/transformers.js) - Apache License 2.0
+   Copyright (c) 2023 Hugging Face, Inc.
+2. ONNX Runtime Web (https://github.com/microsoft/onnxruntime) - MIT License
+   Copyright (c) Microsoft Corporation.
+3. BGE-small-en-v1.5 model (https://huggingface.co/BAAI/bge-small-en-v1.5) - MIT License
+   Copyright (c) 2022 BAAI. Browser/ONNX build by Xenova (https://huggingface.co/Xenova/bge-small-en-v1.5).
+Full license texts: https://www.apache.org/licenses/LICENSE-2.0 and https://opensource.org/license/mit

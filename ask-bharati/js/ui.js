@@ -44,7 +44,7 @@
     var tExit = el('button', '', 'Exit testing mode'); tExit.type = 'button'; tBar.appendChild(tExit);
     var status = el('div', 'ab-status');
     [head, tBar, gate, log, chips, form, status, foot, rz].forEach(function (n) { panel.appendChild(n); });
-    function gated() { return !!CFG && !PREVIEW && !email; }
+    function gated() { return false; }
     function showGate() { tBar.style.display = TESTING ? 'block' : 'none'; var g = gated(); gate.style.display = g ? '' : 'none'; log.style.display = chips.style.display = form.style.display = g ? 'none' : ''; }
     gate.addEventListener('submit', function (e) {
       e.preventDefault(); var v = gIn.value.trim();
@@ -68,10 +68,10 @@
     setStatus('');
     function body() { return pending.map(function (x) { return 'Q: ' + x.q + '\nA: ' + x.a; }).join('\n\n'); }
     function flush(unload) {
-      if (!CFG || PREVIEW || !pending.length || !email || sentMails >= MAXMAIL) return;
+      if (!CFG || PREVIEW || !pending.length || sentMails >= MAXMAIL) return;
       var batch = pending.slice(), payload = JSON.stringify({
-        access_key: CFG.key, subject: 'Ask Bharati chat (unverified visitor email)', from_name: 'Ask Bharati portfolio chat',
-        email: email, message: 'Visitor email (not verified): ' + email + '\n\n' + batch.map(function (x) { return 'Q: ' + x.q + '\nA: ' + x.a; }).join('\n\n'), botcheck: ''
+        access_key: CFG.key, subject: 'Ask Bharati chat (anonymous visitor)', from_name: 'Ask Bharati portfolio chat',
+        message: 'Visitor: anonymous (no email asked)' + '\n\n' + batch.map(function (x) { return 'Q: ' + x.q + '\nA: ' + x.a; }).join('\n\n'), botcheck: ''
       });
       sentMails++; pending = [];
       fetch(CFG.endpoint, {method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}, body: payload, keepalive: !!unload})

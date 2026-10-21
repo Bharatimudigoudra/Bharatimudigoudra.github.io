@@ -54,8 +54,20 @@
     if (/^\s*(hi|hello|hey|hii|good (morning|afternoon|evening))( there)?\b[\s!.]*$/i.test(q)) {
       return {text: 'Hello! You can ask me about my projects, skills, experience or education.', links: [], src: ''};
     }
-    var JUDGE = /\b(negatives?|weakness(es)?|weak points?|flaws?|faults?|shortcomings?|drawbacks?|bad (things?|habits?|points?|side|qualit(y|ies))|downsides?|gaps?|cons|arrogant|lazy|rude|ugly|good[- ]looking|beautiful|pretty|attractive|handsome|boyfriend|girlfriend|dating|religion|caste|politics|drink|smoke|gossip|rumou?rs?|regrets?|insta(gram)?|facebook|snapchat|twitter|five years|10 years|ten years)\b|\bnot (hire|select|choose)\b|\b(what|anything|something|one|any) (is|are)? ?(wrong|bad|negative) (with|about)\b/i;
+    var JUDGE = /\b(negatives?|weakness(es)?|weak points?|flaws?|faults?|shortcomings?|drawbacks?|bad (things?|habits?|points?|side|qualit(y|ies))|downsides?|gaps?|cons|arrogant|lazy|rude|ugly|good[- ]looking|beautiful|pretty|attractive|handsome|boyfriend|girlfriend|dating|religion|caste|politics|drink|smoke|gossip|rumou?rs?|regrets?|insta(gram)?|facebook|snapchat|twitter|five years|10 years|ten years|\d{2,} years|[3-9] years)\b|\bnot (hire|select|choose)\b|\b(what|anything|something|one|any) (is|are)? ?(wrong|bad|negative) (with|about)\b/i;
     var PROJ_NAMED = /\b(youtube|zeroqueue|zero queue|olake|ask olake|medical|fire|smoke|video|lead enrichment|book recommend|source[- ]code|project|projects|app|tool|code|repo|resume|cv)\b/i;
+    if (/^\s*(is it true|is that true)\b|\bno real (project|work|job)? ?(experience|projects?)\b/i.test(q)) {
+      return {text: 'I don\'t have reliable information about that in my portfolio or resume, so I won\'t guess. Please contact me by email or LinkedIn.', links: lk('email', 'linkedin'), src: ''};
+    }
+    if (/\b(rate|rank|score|grade) (this|the|her|bharati)\b|\bout of (10|ten)\b|\bon a scale\b|\bcompare (her|bharati|this candidate)\b|\b(best|top) (ai |ml |software )?(engineer|developer|candidate)\b|\bwould you hire\b|\bhow good is (she|bharati)\b/i.test(q)) {
+      return {text: 'I don\'t have reliable information about that in my portfolio or resume, so I won\'t guess. Please contact me by email or LinkedIn.', links: lk('email', 'linkedin'), src: ''};
+    }
+    if (/\b(PhD|Ph\.?D|doctorate|doctoral|M\.?B\.?A|B\.?Tech|M\.?Tech)\b/i.test(q)) {
+      return {text: 'I don\'t have reliable information about that in my portfolio or resume, so I won\'t guess. Please contact me by email or LinkedIn.', links: lk('email', 'linkedin'), src: ''};
+    }
+    if (/\b(Google|Microsoft|Amazon|Meta|Apple|Netflix|Infosys|TCS|Tata Consultancy|Wipro|Accenture|Cognizant|Capgemini|IBM|Oracle|Flipkart|Adobe|Salesforce|Deloitte|PwC|Ernst|KPMG|Goldman|JPMorgan|Morgan Stanley|Uber|Swiggy|Zomato|PhonePe|Razorpay|Samsung|Intel|Nvidia|OpenAI|Anthropic)\b/i.test(q) && /\b(work|worked|working|job|role|employ|joined|join|intern|career|at|company|notice|experience|hire|hired|left|offer)\b/i.test(q)) {
+      return {text: 'I don\'t have reliable information about that in my portfolio or resume, so I won\'t guess. Please contact me by email or LinkedIn.', links: lk('email', 'linkedin'), src: ''};
+    }
     if (JUDGE.test(q) && !PROJ_NAMED.test(q)) {
       return {text: 'I don\'t have reliable information about that in my portfolio or resume, so I won\'t guess. Please contact me by email or LinkedIn.', links: lk('email', 'linkedin'), src: ''};
     }
@@ -147,7 +159,7 @@
       });
       return {text: paras, links: links.slice(0, 8), src: 'My public GitHub code, snapshot checked ' + GH_DATE + ' (newer commits are not included)'};
     }
-    if (SKILLQ.test(q) && /\b(do you (know|use)|have you (used|worked|tried)|experience (with|in)|familiar with|are you (good|proficient|experienced|skilled)|worked with|work with|know about)\b/i.test(q) && q.length < 90) {
+    if (SKILLQ.test(q) && /\b(do you (know|use)|have you (used|worked|tried)|experience (with|in)|familiar with|are you (good|proficient|experienced|skilled)|worked with|work with|know about|does she (know|use|have)|has she (used|worked)|is she (good|proficient|experienced|skilled|familiar)|did she (use|work))\b/i.test(q) && q.length < 90) {
       var tech = t.filter(function (w) { return QGENERIC.indexOf(w) < 0; });
       var known = [], unknown = [];
       tech.forEach(function (w) { if (SKILLSET[w]) known.push(SKILLSET[w]); else if (DF[w] === undefined) unknown.push(w); });
@@ -172,31 +184,8 @@
       if (ff) return byId(ff.id);
       return {text: 'Sorry, I did not understand that question. You can ask about my projects, skills, experience or education, or email me.', links: lk('email'), src: ''};
     }
-    var scored = DOCS.map(function (d) {
-      var s = 0, hit = 0;
-      t.forEach(function (w) {
-        var inKw = d.kw.indexOf(w) >= 0, inTx = d.tx.indexOf(w) >= 0;
-        if (inKw || inTx) { s += idf(w) * (inKw ? 2 : 1); hit++; }
-      });
-      return {d: d, s: s, hit: hit};
-    }).sort(function (a, b) { return b.s - a.s; });
-    var top = scored[0];
-    if (LINKWORDS.test(q) && top.d.f.id !== 'contact') {
-      var lf = FACTS.filter(function (f) { return f.id === 'links'; })[0];
-      if (!/project|demo|code|zeroqueue|lead|medical|fire|video/i.test(q)) top = {d: {f: lf}, s: 99, hit: 1};
-    }
-    if (top.s < 2.2 || top.hit < 1) {
-      return {text: 'Sorry, I did not understand that question. You can ask about my projects, skills, experience or education, or email me.', links: lk('email', 'linkedin'), src: ''};
-    }
-    if (/\b(college|campus|institute|university)\b/i.test(q) && top.d.f.id !== 'education') {
-      var ef = FACTS.filter(function (f) { return f.id === 'education'; })[0]; top = {d: {f: ef}, s: 99, hit: 1};
-    }
-    var out = [top.d.f];
-    var second = scored[1];
-    if (second && top.s < 99 && second.s >= 0.85 * top.s && second.d.f.sec !== top.d.f.sec && out.length < 2) out.push(second.d.f);
-    var links = [], seenL = {};
-    out.forEach(function (f) { f.links.forEach(function (l) { if (!seenL[l[1]]) { seenL[l[1]] = 1; links.push(l); } }); });
-    return {text: out.map(function (f) { return f.text; }).join('\n').split('\n').map(function (s) { return s.trim(); }).filter(Boolean), links: links, src: out.map(function (f) { return f.sec; }).filter(function (x, i, a) { return a.indexOf(x) === i; }).join(', ')};
+    return null;
+
   }
 
   // ---------- project questions and follow-ups (prepared answers from my resume and portfolio facts only) ----------
@@ -224,9 +213,12 @@
   };
   var ctx = {project: null};
   function answerCtx(q) {
+    if (/\bleetcode\b|\bhackerrank\b|\bcodesignal\b|\b(solve|write|fix|debug|build|create|make|draft)\b.{0,40}\b(for me|for her|for us|her (an? )?(email|letter|referral|recommendation|resume|cv)|my (code|project|assignment|homework))\b/i.test(q)) {
+      return {text: 'I don\'t have reliable information about that in my portfolio or resume, so I won\'t guess. Please contact me by email or LinkedIn.', links: lk('email', 'linkedin'), src: ''};
+    }
     var pid = null, i;
     for (i = 0; i < PROJ.length; i++) if (PROJ[i][1].test(q)) { pid = PROJ[i][0]; break; }
-    var pron = /\b(it|this|that|the project|this project|that project|its)\b/i.test(q);
+    var pron = /\b(it|that|the project|this project|that project|its)\b|\bthis\b(?!\s+(person|candidate|portfolio|site|page|resume|cv))/i.test(q);
     var intents = [];
     for (i = 0; i < INTENT.length; i++) if (INTENT[i][1].test(q)) intents.push(INTENT[i][0]);
     var useId = pid || (ctx.project && intents.length ? ctx.project : null);
@@ -247,5 +239,20 @@
     else if (r && r.src === 'Projects' && /Ask OLake/.test(JSON.stringify(r.text))) ctx.project = 'olake';
     return r;
   }
-  AB.answer = answerCtx;
+  AB.UNKNOWN = {text: 'I don\'t have reliable information about that in my portfolio or resume, so I won\'t guess. Please contact me by email or LinkedIn.', links: lk('email', 'linkedin'), src: ''};
+  AB.UNAVAILABLE = {text: 'The smart chat could not load in this browser right now, so I cannot answer questions here. Please email me and I will reply.', links: lk('email'), src: ''};
+  AB.answerGuards = answerCtx;
+  AB.answer = function (q) { return answerCtx(q) || AB.UNKNOWN; };
+  AB.answerAsync = function (q) {
+    var g = answerCtx(q);
+    if (g) return Promise.resolve(g);
+    var S = AB.semantic;
+    if (!S) return Promise.resolve(AB.UNKNOWN);
+    return S.route(q).then(function (id) {
+      if (!id) return AB.UNKNOWN;
+      var f = factById(id);
+      return f ? {text: f.text, links: f.links, src: f.sec} : AB.UNKNOWN;
+    }, function () { return AB.UNAVAILABLE; });
+  };
+  function factById(id) { return FACTS.filter(function (f) { return f.id === id; })[0]; }
 })((window.AskBharati = window.AskBharati || {}));
